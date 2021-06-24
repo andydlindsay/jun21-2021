@@ -13,7 +13,13 @@ const filter = (arr, cb) => {
 
 const dogs = ['Fido', 'Barkley', 'Goldie', 'Clifford', 'Dioji'];
 const behaviour = (dog) => {
-  return dog.length > 5;
+  // if (dog.length > 5) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+
+  return !(dog.length > 5);
 };
 
 const filtered = filter(dogs, behaviour);
