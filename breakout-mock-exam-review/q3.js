@@ -14,7 +14,39 @@
  *    6
  */
 const mode = function(arr) {
+  // set up an object to hold our piles
+  const piles = {};
 
+  // iterate through the array
+  for (const num of arr) {
+    // have we seen this number before?
+    if (piles[num]) {
+      // if we have, increment the number
+      piles[num] += 1;
+    } else {
+      // if we haven't, we want to establish a new key/value pair
+      piles[num] = 1;
+    }
+  }
+
+  console.log(piles);
+
+  // set up two variables
+  let highest = 0;
+  let highestKey = null;
+
+  // iterate through the piles object
+  for (const key in piles) {
+    // compare each value against current highest
+    if (piles[key] > highest) {
+      // if higher, update highest and highestKey
+      highest = piles[key];
+      highestKey = key;
+    }
+  }
+
+  // return the highest key
+  return highestKey;
 };
 
 // Don't change below:

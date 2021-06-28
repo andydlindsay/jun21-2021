@@ -47,6 +47,13 @@ describe('q0 tests', () => {
       assert.equal(result, 4);
     });
 
+    it('returns null if given an empty array', () => {
+      const input = [];
+      const actual = mean(input);
+      const expected = null;
+      assert.equal(actual, expected);
+    });
+
   });
 
 });

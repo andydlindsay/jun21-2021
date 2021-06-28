@@ -22,6 +22,7 @@
  *
  *    2.67
  */
+const functions = require('./q0');
 
 // This function is to be used by stdev. Do not alter.
 const round = function(number) {
@@ -29,7 +30,24 @@ const round = function(number) {
 };
 
 const stdev = function(arr) {
+  // sqrt(sum((x - populationMean)^2)/numberOfValues)
 
+  const numberOfValues = arr.length;
+  const populationMean = functions.sum(arr) / numberOfValues;
+
+  const differences = [];
+  for (const x of arr) {
+    const distanceFromMean = x - populationMean;
+    const squared = Math.pow(distanceFromMean, 2);
+    differences.push(squared);
+  }
+
+  // console.log(differences);
+  const differencesSum = functions.sum(differences);
+  // console.log(differencesSum);
+  const average = differencesSum / numberOfValues;
+
+  return round(Math.sqrt(average));
 };
 
 // Don't change below:
