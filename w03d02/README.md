@@ -8,45 +8,30 @@
 - [x] Using Chrome DevTools to see requests and responses
 - [x] Practice debugging Express
 
-CRUD === Create Read Update Delete
-BREAD === Browse Read Edit Add Delete
+### CRUD and BREAD
 
-* ideas
-* nuanced: boolean
-* thought: string
-* thinker: string
+* There are 5 main operations that we can perform on a particular resource (or group of resources)
+  * Create a new resource
+  * Retrieve all of the existing resources
+  * Retrieve a particular resource
+  * Edit a particular resource
+  * Delete a particular resource
 
-object of objects
+* We use acronyms to help us remember these operations: **CRUD** and **BREAD**
+  * **CRUD**: **C**reate **R**ead **U**pdate **D**elete
+  * **BREAD**: **B**rowse **R**ead **E**dit **A**dd **D**elete
 
+### Forms vs Anchor Tags
+* Anchor tags (`<a></a>`) only make `GET` requests
+  * Anchor tags are generally used to link between websites or to different pages on the same site
+* Forms can make either `GET` or `POST` requests (specified in the form's `method` attribute)
+  * Forms are used to collect and submit user information
+* If data is being retrieved, use a `GET` request
+* If data is being updated/changed/created, use a `POST` request (therefore, a form)
+  * NOTE: This includes things like buttons to delete a resource (simply wrap the button in a form)
 
-
-https://www.google.com/search?
-q=query+string&
-sxsrf=ALeKk00CSNKJSWl-jinYEzv4XtB73BYjtQ%3A1625593536888&
-source=hp&
-ei=wJbkYNntM-C10PEP6oyHyAU&iflsig=AINFCbYAAAAAYOSk0ALijMwLLBpG1lqdUlYwOWjBAFdp&oq=query+string&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQguELEDOgUIABCxAzoICC4QxwEQrwE6CAgAELEDEIMBOggILhCxAxCDAToLCC4QsQMQxwEQrwE6AgguOgQIABAKUNYFWIAQYNUQaABwAHgAgAFJiAGEBpIBAjEymAEAoAEBqgEHZ3dzLXdpeg&sclient=gws-wiz&ved=0ahUKEwjZzcDq_87xAhXgGjQIHWrGAVkQ4dUDCAk&uact=5
-
-
-req.query.q
-
-
-http://localhost:4567/ideas/abcd?thought=hello+world
-
-Edit    POST /ideas/:id
-Delete  POST /ideas/:id/delete
-
-
-Post => Redirect => Get
-
-longURL.includes('http'); // true
-
-GET /u/:shortURL
-res.redirect(longUrl); // http:// or https://www.google.com
-
-res.redirect('www.google.com');
-GET /u/www.google.com
-
-res.redirect(undefined);
-GET /u/undefined
-
-https://www.google.com/
+### Useful Links
+* [BREAD/CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
+* [Embedded JavaScript (EJS)](https://github.com/mde/ejs)
+* [Delete Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
+* [HTML Forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data)
