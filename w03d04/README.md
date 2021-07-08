@@ -6,7 +6,7 @@
 - [x] HTTP Secure (HTTPS)
 - [x] REST
 - [x] More HTTP methods
-- [ ] Method Override [Stretch]
+- [x] Method Override [Stretch]
 
 ### Storing Passwords
 * We **never** want to store passwords as plain text
