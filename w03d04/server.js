@@ -1,6 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
+const bcrypt = require('bcryptjs');
+const methodOverride = require('method-override');
 
 const app = express();
 const port = 1234;
@@ -8,7 +11,21 @@ const port = 1234;
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
-app.use(cookieParser());
+// app.use(cookieParser());
+app.use(cookieSession({
+  name: 'jun21',
+  keys: ['no significance', 'key2', 'more stuff']
+}));
+app.use(methodOverride('_method'));
+
+// app.use((req, res, next) => {
+//   if (req.query._method) {
+//     req.method = req.query._method;
+//   }
+//   next();
+// });
+
+
 
 app.set('view engine', 'ejs');
 
@@ -45,7 +62,8 @@ app.get('/register', (req, res) => {
 
 // GET /protected
 app.get('/protected', (req, res) => {
-  const userId = req.cookies.userId;
+  // const userId = req.cookies.userId;
+  const userId = req.session.userId;
   
   // check if the user has a cookie set
   if (!userId) {
@@ -62,8 +80,8 @@ app.get('/protected', (req, res) => {
   res.render('protected', { user });
 });
 
-// POST /login
-app.post('/login', (req, res) => {
+// PATCH /login
+app.patch('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
@@ -81,15 +99,18 @@ app.post('/login', (req, res) => {
   }
 
   // we found the user! now we need to compare the password
-  if (user.password !== password) {
-    return res.status(400).send('password does not match');
-  }
+  bcrypt.compare(password, user.password, (err, result) => {
+    if (!result) {
+      return res.status(400).send('password does not match');
+    }
 
-  // happy path! at last
-  res.cookie('userId', user.id);
+    // happy path! at last
+    // res.cookie('userId', user.id);
+    req.session.userId = user.id;
 
-  // redirect the user
-  res.redirect('/protected');
+    // redirect the user
+    res.redirect('/protected');
+  }); 
 });
 
 // POST /register
@@ -112,19 +133,27 @@ app.post('/register', (req, res) => {
   // add the new user to our users object
   const id = Math.floor(Math.random() * 1000) + 1;
 
-  users[id] = {
-    id,
-    email,
-    password
-  };
+  // hash the user's password
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(password, salt, (err, hash) => {
+      users[id] = {
+        id,
+        email,
+        password: hash
+      };
 
-  res.redirect('/login');
+      console.log(users);
+
+      res.redirect('/login');
+    });
+  });
 });
 
 // POST /logout
 app.post('/logout', (req, res) => {
   // clear the cookie
-  res.clearCookie('userId');
+  // res.clearCookie('userId');
+  req.session = null;
 
   res.redirect('/login');
 });
