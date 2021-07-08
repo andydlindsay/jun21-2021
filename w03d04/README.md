@@ -88,3 +88,10 @@ A POST   /turtles
 D POST   /turtles/:id/delete
 
 
+// IT WORKS >>
+  res.clearCookie("session");
+  // IT DOESN'T WORK >>
+  req.session = null;
+
+https://www.google.com/search
+?q=query+string&rlz=1C1RXQR_enCA942CA942&oq=query+string&aqs=chrome.0.69i59j0i67j0l8.1010j0j1&sourceid=chrome&ie=UTF-8
