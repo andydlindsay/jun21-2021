@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.content {
+  border: 2px dotted #ff61df;
+  border-radius: 15px;
+}
+
+#main-list {
+  color: orangered;
+}
+
+.red {
+  color: red;
+}
