@@ -8,17 +8,50 @@
 - [x] Use AJAX to submit data to a server
 - [x] All without refreshing the browser
 
-1. structure of the page
-2. data for the page (async) XML
+### AJAX
+* **A**synchronous **J**avaScript **A**nd **X**ML
+* Invented by Microsoft for Outlook Web Access as a way of replicating desktop application functionality in the browser
+* Thanks to AJAX, web applications can send and receive data asynchronously without requiring a browser refresh
+* The widespread use of AJAX was one of the factors that led to Web 2.0
+* Originally retrieved data sent using `XML`, but modern applications use `JSON` instead
 
-Asynchronous JS and XML === AJAX
+### XMLHttpRequest Object
+* AJAX is implemented using the `XMLHttpRequest` (`XHR`) object
+* Modern libraries (such as `jQuery` or `axios`) provide us with easy-to-use wrappers for the `XHR` object
 
-SPA - Single Page Application
+### jQuery AJAX
+* jQuery gives us an API for making AJAX requests
 
-GET /users => web page
-GET /api/users => data JSON
+```js
+$.ajax({
+  url: 'https://jsonplaceholder.typicode.com/posts',
+  method: 'GET',
+  dataType: 'json',
+  success: (data) => {
+    console.log('this request succeeded and here\'s the data', data);
+  },
+  error: (error) => {
+    console.log('this request failed and this was the error', error);
+  }
+});
+```
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+### jQuery Shorthand Methods
+* jQuery has several shorthand methods so that we don't have to use the full `.ajax` method every time
 
+```js
+// make a get request to the specified endpoint
+$.get('https://jsonplaceholder.typicode.com/posts');
 
-?title=my+new+title&body=interesting+things&userid=4
+// make a get request for JSON data
+$.getJSON('https://jsonplaceholder.typicode.com/posts');
+
+// make a post request
+$.post('https://jsonplaceholder.typicode.com/posts', { /* form data */ });
+```
+
+### Useful Links
+* [Blog post coining AJAX](https://web.archive.org/web/20160305044414/http://adaptivepath.org/ideas/ajax-new-approach-web-applications/)
+* [Wikipedia: AJAX](https://en.wikipedia.org/wiki/Ajax_(programming))
+* [MDN: XMLHttpRequest (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+* jQuery [AJAX](http://api.jquery.com/jquery.ajax/), [getJSON](https://api.jquery.com/jquery.getjson/), and [post](https://api.jquery.com/jquery.post/) methods
