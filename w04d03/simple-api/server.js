@@ -7,6 +7,7 @@ const users = require('./data/users.json');
 const posts = require('./data/posts.json');
 
 app.use(express.urlencoded({ extended: false }));
+// title=whatever&body=more%20stuff&userid=5
 app.use(express.static('public'));
 app.use(morgan('dev'));
 
