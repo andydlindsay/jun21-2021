@@ -90,9 +90,6 @@ app.get('/login/:id', (req, res) => {
 - Make sure to communicate with your team members
 - Use Slack, iMessage, Google Hangouts, whatever... just make sure that everyone is on the same page
 
-### Github Projects
-- Github has a built-in project board (similar to a kanban board)
-
 ### Deployment
 - Decide if you want/need to deploy your application to the cloud
 - Ask a mentor for assistance/advice if your team decides to deploy
