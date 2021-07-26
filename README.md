@@ -12,3 +12,4 @@
 * [W04D03 - AJAX](/w04d03)
 * [W05D05 - Mid-term Project Kickoff](/w05d05)
 * [BREAKOUT - Express Router](/breakout-express-router)
+* [BREAKOUT - CRUD with AJAX](/breakout-crud-with-ajax)
