@@ -13,3 +13,5 @@
 * [W05D05 - Mid-term Project Kickoff](/w05d05)
 * [BREAKOUT - Express Router](/breakout-express-router)
 * [BREAKOUT - CRUD with AJAX](/breakout-crud-with-ajax)
+* [W07D02 - Immutable Update Patterns](/w07d02)
+* [W07D03 - Data Fetching & Other Side Effects](/w07d03)
