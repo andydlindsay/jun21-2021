@@ -1,15 +1,21 @@
-# W07D03 - Data Fetching & Other Side Effects
+# W07D03 - Side Effects & Other Data Fetching
 
 ### To Do
-- [ ] Rules for Hooks
-- [ ] Pure Functions and Side Effects
-- [ ] `useEffect`
-- [ ] Cleanup
-- [ ] Dependencies
-- [ ] _useEffect_ Flow
+- [x] Rules for Hooks
+- [x] Pure Functions and Side Effects
+- [x] `useEffect`
+- [x] Cleanup
+- [x] Dependencies
+- [x] _useEffect_ Flow
 
+### Rules for Hooks
+* called in the same order (not conditionally)
+* called inside React functions (components/custom hooks)
+* hooks have to start with `use`
 
+`State`, `Effect`
 
+app.use
 
 
 
