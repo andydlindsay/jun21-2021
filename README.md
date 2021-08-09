@@ -15,3 +15,5 @@
 * [BREAKOUT - CRUD with AJAX](/breakout-crud-with-ajax)
 * [W07D02 - Immutable Update Patterns](/w07d02)
 * [W07D03 - Data Fetching & Other Side Effects](/w07d03)
+* [W08D01 - Unit & Integration Testing](/w08d01)
+* [W08D04 - Class-based Components](/w08d04)
