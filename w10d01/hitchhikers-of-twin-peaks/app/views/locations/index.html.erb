@@ -1,0 +1,12 @@
+<h1>All the locations for <%= @planet.planet_name %>!</h1>
+
+<%= link_to "Planets", planets_path %>
+
+<% @locations.each do |location| %>
+  <div class="location" style="border: 1px solid magenta;">
+    <h2>Character: <%= location.character %></h2>
+    <h2>Location: <%= location.location %></h2>
+    <h2>Quote: <%= location.quote %></h2>
+    <h2>Planet: <%= location.planet.planet_name %></h2>
+  </div>
+<% end %>

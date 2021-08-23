@@ -1,0 +1,9 @@
+<h1>All the planets!!</h1>
+
+<% @planets.each do |planet| %>
+  <div class="planet" style="border: 1px dotted salmon;">
+    <h2>Planet name: <%= planet.planet_name %></h2>
+    <h2>Species: <%= planet.species %></h2>
+    <%= link_to "Locations for this planet", planet_locations_path(planet) %>
+  </div>
+<% end %>
