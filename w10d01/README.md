@@ -6,7 +6,7 @@
 - [x] Rails Libraries
 - [x] Quickly build simple Rails app
 - [x] Nested Resources
-- [ ] Scaffold generator
+- [x] Scaffold generator
 
 ### Rails Week Convo
 * like the way Ruby looks (very clean)

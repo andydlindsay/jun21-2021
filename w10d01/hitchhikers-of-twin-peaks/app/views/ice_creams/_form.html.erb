@@ -1,0 +1,17 @@
+<%= form_with(model: ice_cream) do |form| %>
+  <% if ice_cream.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ice_cream.errors.count, "error") %> prohibited this ice_cream from being saved:</h2>
+
+      <ul>
+        <% ice_cream.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
