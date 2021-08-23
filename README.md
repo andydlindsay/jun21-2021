@@ -17,3 +17,5 @@
 * [W07D03 - Data Fetching & Other Side Effects](/w07d03)
 * [W08D01 - Unit & Integration Testing](/w08d01)
 * [W08D04 - Class-based Components](/w08d04)
+* [W10D01 - Rails Review](/w10d01)
+* [W10D03 - Advanced Lecture](/w10d03)
