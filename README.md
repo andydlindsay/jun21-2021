@@ -18,4 +18,4 @@
 * [W08D01 - Unit & Integration Testing](/w08d01)
 * [W08D04 - Class-based Components](/w08d04)
 * [W10D01 - Rails Review](/w10d01)
-* [W10D03 - Advanced Lecture](/w10d03)
+* [W10D03 - Intro to TypeScript](/w10d03)

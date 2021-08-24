@@ -1,2 +1,23 @@
-# W10D03 - Advanced Lecture
+# W10D03 - Intro to TypeScript
+
+### To Do
+* [ ] What is TypeScript?
+* [ ] TypeScript CLI
+* [ ] Primitive Types
+* [ ] Arrays
+* [ ] Objects
+* [ ] Functions and Methods
+* [ ] Duck Typing
+* [ ] Generics
+
+
+
+
+
+
+
+
+
+
+
 
